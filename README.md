@@ -1,2 +1,3 @@
 # dump
-An opensource alternative to Red Giant's Offload.
+An open source alternative to Red Giant's Offload.
+
