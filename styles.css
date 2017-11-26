@@ -1,0 +1,39 @@
+button {
+  -webkit-app-region: no-drag;
+}
+
+html {
+  background-color: rgba(255, 255, 255, 0.90) !important;
+  -webkit-app-region: drag;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: none !important;
+  color: rgb(36, 36, 36);
+  width: 100%;
+  height: 100%;
+}
+
+.titlebar {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
+a, p, b, li, h1, h2, h3, h4, h5 {
+  -webkit-app-region: no-drag;
+}
+
+#welcomeScreen {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+#welcomeScreen>.textContainer {
+  display: table-cell;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+}
