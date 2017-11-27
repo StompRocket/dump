@@ -1,31 +1,60 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Hello World!</title>
-  <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
-  <link rel="stylesheet" href="./styles.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="./node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
 
-<body class="container">
-  <br>
-  <section id="welcomeScreen">
-    <div class="textContainer">
-      <div class="columns">
-        <div class="column">
-          <h1 class="title is-1">Welcome to <b>Dump<b></h1>
-          <h2 class="subtitle is-3">An open source alternative to Red Giant Offload</h2>
+  <body class="container">
+    <main id="app">
+      <section v-if="welcome" id="welcomeScreen">
+        <div class="textContainer">
+          <div class="columns">
+            <div class="column">
+              <h1 class="title is-1">Welcome to <b>Dump<b></h1>
+              <h2 class="subtitle is-3">An open source alternative to Red Giant Offload</h2>
+            </div>
+            <div class="column">
+              <br>
+              <button @click="toInput" class="button is-black is-large next">Next</button>
+            </div>
+          </div>
+
         </div>
-        <div class="column">
 
-        </div>
-      </div>
+      </section>
+      <section v-if="chooseInput" id="chooseInput">
+        <h1 class="title is-1">Choose A Source</h1>
+        <button @click="chooseSource" class="button is-black is-large chooseSource" v-bind:class="{'is-loading': BTNLoading }">Choose A Source</button>
+        <p>{{sourceDir}}</p>
+      </section>
+      <section v-if="chooseDestWindow" id="chooseDest">
+        <h1 class="title is-1">Choose A Destination</h1>
 
-    </div>
+        <button @click="chooseDest" class="button is-black is-large chooseSource" v-bind:class="{'is-loading': BTNLoading }">Choose A Destination</button>
+        <p>{{destDir}}</p>
+      </section>
+      <section v-if="chooseBackupWindow" id="chooseBackup">
+        <h1 class="title is-1">Choose A Backup Destination</h1>
 
-  </section>
+        <button @click="chooseBackup" class="button is-black is-large chooseSource" v-bind:class="{'is-loading': BTNLoading }">Choose A backup</button>
+        <p>{{backupDir}}</p>
+      </section>
+      <section v-if="finalLoader">
+        <h1 class="title is-1">Loading</h1>
+        <br>
+        <p>Source: {{sourceDir}}</p>
+        <p>Destination: {{destDir}}</p>
+        <p>Backup: {{backupDir}}</p>
+        <button @click="run" class="button is-primary is-large run" v-bind:class="{'is-loading': runBTNLoading }">{{runBTNText}}</button>
+      </section>
+    </main>
 
-</body>
+    <script src="./node_modules/vue/dist/vue.min.js" charset="utf-8"></script>
+    <script src="./main.js" charset="utf-8"></script>
+  </body>
 
 </html>

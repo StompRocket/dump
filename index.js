@@ -2,6 +2,7 @@ const {
   app,
   BrowserWindow
 } = require('electron')
+
 const path = require('path')
 const url = require('url')
 
@@ -9,11 +10,11 @@ const url = require('url')
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
-function createWindow() {
+function createWindow () {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 1920,
-    height: 1080,
+    width: 1280,
+    height: 720,
     titleBarStyle: 'hidden',
     frame: false
   })
