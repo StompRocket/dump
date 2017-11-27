@@ -24,6 +24,9 @@
   "homepage": "https://github.com/StompRocket/dump#readme",
   "dependencies": {
     "bulma": "^0.6.1",
-    "electron": "^1.7.9"
+    "electron": "^1.7.9",
+    "ncp": "^2.0.0",
+    "vue": "^2.5.8",
+    "vuejs": "^2.0.6"
   }
 }
