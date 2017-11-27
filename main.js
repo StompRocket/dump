@@ -82,7 +82,7 @@ var app = new Vue({
       })
 
       this.runBTNLoading = false
-      this.runBTNText = '√'
+      this.runBTNText = 'Done!'
     }
   }
 
